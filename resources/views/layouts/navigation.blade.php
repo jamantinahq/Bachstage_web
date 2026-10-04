@@ -1,47 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between" style="row-gap: 10px;">
 
-        <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}">
+        <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}" style="color: #f0f0f0 !important;">
             Bachstage
-            
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex flex-wrap align-items-center" style="gap: 15px;">
 
-        <div class="collapse navbar-collapse" id="menu">
-            <div class="navbar-nav ms-auto align-items-lg-center">
+            <a href="{{ route('dashboard') }}"
+                style="color: {{ request()->routeIs('dashboard') ? '#8b5cf6' : '#f0f0f0' }} !important; text-decoration: none; font-weight: 500;">
+                Eventos
+            </a>
 
-                <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"
-                    href="{{ route('dashboard') }}">
-                    Eventos
-                </a>
+            <a href="{{ route('eventos.meus') }}"
+                style="color: {{ request()->routeIs('eventos.meus') ? '#8b5cf6' : '#f0f0f0' }} !important; text-decoration: none; font-weight: 500;">
+                Meus Eventos
+            </a>
 
-                <a class="nav-link {{ request()->routeIs('eventos.meus') ? 'active' : '' }}"
-                    href="{{ route('eventos.meus') }}">
-                    Meus Eventos
-                </a>
+            <a href="{{ route('favoritos.listar') }}"
+                style="color: {{ request()->routeIs('favoritos.listar') ? '#8b5cf6' : '#f0f0f0' }} !important; text-decoration: none; font-weight: 500;">
+                Favoritos
+            </a>
 
-                <a class="nav-link {{ request()->routeIs('favoritos.listar') ? 'active' : '' }}"
-                    href="{{ route('favoritos.listar') }}">
-                    Favoritos
-                </a>
+            <a href="{{ route('profile.edit') }}"
+                style="color: {{ request()->routeIs('profile.edit') ? '#8b5cf6' : '#f0f0f0' }} !important; text-decoration: none; font-weight: 500;">
+                Perfil
+            </a>
 
-                <a class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : '' }}"
-                    href="{{ route('profile.edit') }}">
-                    Perfil
-                </a>
+            <form method="POST" action="{{ route('logout') }}" class="d-inline m-0">
+                @csrf
+                <button type="submit" class="btn btn-link p-0"
+                    style="border: none; background: none; color: #f0f0f0 !important; text-decoration: none; font-weight: 500;">
+                    Sair
+                </button>
+            </form>
 
-                <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                    @csrf
-                    <button type="submit" class="nav-link btn btn-link p-0 ms-lg-3"
-                        style="border: none; background: none;">
-                        Sair
-                    </button>
-                </form>
-
-            </div>
         </div>
 
     </div>

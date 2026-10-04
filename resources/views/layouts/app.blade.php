@@ -8,9 +8,11 @@
 
     <title>{{ config('app.name', 'Bachstage') }}</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -25,6 +27,11 @@
 
         .nav-link {
             font-weight: 500;
+        }
+
+        .navbar-dark .nav-link,
+        .navbar-dark .navbar-brand {
+            color: #f0f0f0 !important;
         }
 
         .nav-link:hover,
@@ -81,9 +88,11 @@
             color: #888;
         }
 
+        /* as caixas de Perfil (Breeze) usam bg-white do Tailwind, não .card do Bootstrap */
         .bg-white {
             color: #1f2937;
             color-scheme: light;
+            /* impede o navegador de re-escurecer os campos sozinho */
         }
 
         .bg-white input,
@@ -93,6 +102,7 @@
         }
     </style>
 
+    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
