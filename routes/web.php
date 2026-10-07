@@ -30,9 +30,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-
-Route::get('/migrar-tudo-agora-xyz123', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    Artisan::call('db:seed', ['--force' => true]);
-    return 'Migrations e seeders executados com sucesso!';
-});
